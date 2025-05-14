@@ -16,7 +16,7 @@ class Controller:
         self._view.lst_result.controls.clear()
         mese = self._view.dd_mese.value
         if mese == None:
-            self._view.create_alert("Selezionare un mese dell'anno per proseguire nell'operazione")
+            self._view.create_alert("Selezionare un mese dell'anno per proseguire nell'operazione.")
             self._view.update_page()
             return
         result = self._model.getMediaUmidita(mese)
@@ -29,7 +29,7 @@ class Controller:
         self._view.lst_result.controls.clear()
         mese = self._view.dd_mese.value
         if mese == None:
-            self._view.create_alert("Selezionare un mese dell'anno per proseguire nell'operazione")
+            self._view.create_alert("Selezionare un mese dell'anno per proseguire nell'operazione.")
             self._view.update_page()
             return
         result = self._model.calcolaSequenza(mese)
