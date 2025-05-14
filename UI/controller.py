@@ -26,7 +26,17 @@ class Controller:
         self._view.update_page()
 
     def handle_sequenza(self, e):
-        pass
+        self._view.lst_result.controls.clear()
+        mese = self._view.dd_mese.value
+        if mese == None:
+            self._view.create_alert("Selezionare un mese dell'anno per proseguire nell'operazione")
+            self._view.update_page()
+            return
+        result = self._model.calcolaSequenza(mese)
+        self._view.lst_result.controls.append(ft.Text(f"La sequenza ottima ha costo {result[0]}"))
+        for element in result[1]:
+            self._view.lst_result.controls.append(ft.Text(f"{element}"))
+        self._view.update_page()
 
     def read_mese(self, e):
         self._mese = int(e.control.value)
