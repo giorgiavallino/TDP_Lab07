@@ -40,4 +40,3 @@ class Controller:
 
     def read_mese(self, e):
         self._mese = int(e.control.value)
-
